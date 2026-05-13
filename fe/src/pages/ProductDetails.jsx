@@ -59,7 +59,7 @@ const ProductDetails = () => {
             </div>
             
             <h2 className="fw-bold mb-4" style={{ color: 'var(--primary-color)' }}>
-              ${product.price.toFixed(2)}
+              ₹{product.price.toFixed(2)}
             </h2>
             
             <p className="lead text-muted mb-5">
@@ -113,7 +113,7 @@ const ProductDetails = () => {
                 </h2>
                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#productAccordion">
                   <div className="accordion-body text-muted small">
-                    Free shipping on orders over $100. Due to the custom handmade nature of these products, returns are accepted within 14 days of delivery only for defective items.
+                    Free shipping on orders over ₹10000. Due to the custom handmade nature of these products, returns are accepted within 14 days of delivery only for defective items.
                   </div>
                 </div>
               </div>

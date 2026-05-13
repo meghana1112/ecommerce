@@ -11,7 +11,7 @@ const Checkout = () => {
   });
 
   const subtotal = cart.reduce((total, item) => total + (item.product.price * item.quantity), 0);
-  const total = subtotal + (subtotal > 100 ? 0 : 10);
+  const total = subtotal + (subtotal > 10000 ? 0 : 1000);
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -88,7 +88,7 @@ const Checkout = () => {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-gradient btn-lg w-100 shadow mt-3">Place Order - ${total.toFixed(2)}</button>
+            <button type="submit" className="btn btn-gradient btn-lg w-100 shadow mt-3">Place Order - ₹{total.toFixed(2)}</button>
           </form>
         </div>
 
@@ -102,12 +102,12 @@ const Checkout = () => {
                     <h6 className="my-0">{item.product.name}</h6>
                     <small className="text-muted">Qty: {item.quantity}</small>
                   </div>
-                  <span className="text-muted">${(item.product.price * item.quantity).toFixed(2)}</span>
+                  <span className="text-muted">₹{(item.product.price * item.quantity).toFixed(2)}</span>
                 </li>
               ))}
               <li className="list-group-item bg-transparent d-flex justify-content-between border-0 px-0 pt-3">
-                <span>Total (USD)</span>
-                <strong style={{ color: 'var(--primary-color)' }}>${total.toFixed(2)}</strong>
+                <span>Total (INR)</span>
+                <strong style={{ color: 'var(--primary-color)' }}>₹{total.toFixed(2)}</strong>
               </li>
             </ul>
           </div>

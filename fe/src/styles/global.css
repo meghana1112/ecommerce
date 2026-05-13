@@ -1,24 +1,24 @@
 :root {
-  --primary-color: #8A2BE2; /* BlueViolet */
-  --secondary-color: #4B0082; /* Indigo */
-  --accent-color: #FF1493; /* DeepPink */
-  --bg-color: #f8f9fa;
-  --text-color: #212529;
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.3);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --primary-color: #D4AF37; /* Metallic Gold */
+  --secondary-color: #0B2545; /* Deep Navy Blue */
+  --accent-color: #E2C275; /* Lighter Gold */
+  --bg-color: #FAFAFA; /* Soft Cream / Pearl Off-White */
+  --text-color: #222222; /* Charcoal */
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --border-color: rgba(212, 175, 55, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(11, 37, 69, 0.05);
   --font-family: 'Inter', sans-serif;
 }
 
 [data-theme='dark'] {
-  --primary-color: #b17eed;
-  --secondary-color: #9d50df;
-  --accent-color: #ff6ebd;
+  --primary-color: #D4AF37;
+  --secondary-color: #F8F9FA;
+  --accent-color: #E2C275;
   --bg-color: #121212;
-  --text-color: #f8f9fa;
-  --card-bg: rgba(30, 30, 30, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --text-color: #E0E0E0;
+  --card-bg: rgba(30, 30, 30, 0.85);
+  --border-color: rgba(212, 175, 55, 0.15);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }
 
 body {
@@ -54,7 +54,7 @@ body {
 }
 
 .btn-gradient {
-  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(135deg, var(--primary-color), #b8962e);
   color: white;
   border: none;
   border-radius: 50px;
@@ -64,10 +64,10 @@ body {
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+  background: linear-gradient(135deg, #b8962e, var(--primary-color));
   color: white;
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
 .navbar-glass {

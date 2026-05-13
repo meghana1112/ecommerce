@@ -33,6 +33,9 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      'no-unused-vars': ['error', { 'varsIgnorePattern': '^React$', 'argsIgnorePattern': '^_' }],
+      'react/prop-types': 'off',
+      'react/no-unescaped-entities': 'off',
     },
   },
 ]

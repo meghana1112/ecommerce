@@ -33,14 +33,14 @@ const ProductCard = ({ product }) => {
           <h5 className="card-title fw-semibold">{product.name}</h5>
         </Link>
         <div className="d-flex justify-content-between align-items-center mb-3">
-          <span className="fs-5 fw-bold" style={{ color: 'var(--primary-color)' }}>${product.price.toFixed(2)}</span>
+          <span className="fs-5 fw-bold" style={{ color: 'var(--primary-color)' }}>₹{product.price.toFixed(2)}</span>
           <RatingStars rating={product.rating} count={product.reviews} />
         </div>
         <button 
           onClick={() => addToCart(product)}
           className="btn btn-gradient w-100 d-flex justify-content-center align-items-center gap-2"
         >
-          <BsCartPlus fs-5 /> Add to Cart
+          <BsCartPlus className="fs-5" /> Add to Cart
         </button>
       </div>
     </div>

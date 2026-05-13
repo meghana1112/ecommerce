@@ -55,7 +55,7 @@ export const AppProvider = ({ children }) => {
   };
 
   // Auth actions
-  const login = (email, password) => {
+  const login = (email, _password) => {
     // Dummy login
     setUser({ name: "Megsy User", email });
   };

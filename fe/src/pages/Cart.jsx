@@ -7,7 +7,7 @@ const Cart = () => {
   const { cart, updateCartQuantity, removeFromCart } = useApp();
 
   const subtotal = cart.reduce((total, item) => total + (item.product.price * item.quantity), 0);
-  const shipping = subtotal > 100 ? 0 : 10;
+  const shipping = subtotal > 10000 ? 0 : 1000;
   const total = subtotal + shipping;
 
   if (cart.length === 0) {
@@ -58,7 +58,7 @@ const Cart = () => {
                           </div>
                         </div>
                       </td>
-                      <td className="fw-semibold text-muted">${item.product.price.toFixed(2)}</td>
+                      <td className="fw-semibold text-muted">₹{item.product.price.toFixed(2)}</td>
                       <td>
                         <div className="d-flex align-items-center justify-content-center border rounded-pill p-1 mx-auto" style={{ maxWidth: '120px' }}>
                           <button className="btn btn-sm btn-link text-decoration-none text-dark shadow-none px-2" onClick={() => updateCartQuantity(item.product.id, item.quantity - 1)}>-</button>
@@ -66,7 +66,7 @@ const Cart = () => {
                           <button className="btn btn-sm btn-link text-decoration-none text-dark shadow-none px-2" onClick={() => updateCartQuantity(item.product.id, item.quantity + 1)}>+</button>
                         </div>
                       </td>
-                      <td className="text-end fw-bold px-4">${(item.product.price * item.quantity).toFixed(2)}</td>
+                      <td className="text-end fw-bold px-4">₹{(item.product.price * item.quantity).toFixed(2)}</td>
                       <td className="pe-4 text-end">
                         <button className="btn btn-link text-danger shadow-none p-0" onClick={() => removeFromCart(item.product.id)}>
                           <BsTrash fs-5 />
@@ -92,17 +92,17 @@ const Cart = () => {
             
             <div className="d-flex justify-content-between mb-3 text-muted">
               <span>Subtotal</span>
-              <span className="fw-semibold text-reset">${subtotal.toFixed(2)}</span>
+              <span className="fw-semibold text-reset">₹{subtotal.toFixed(2)}</span>
             </div>
             
             <div className="d-flex justify-content-between mb-4 text-muted">
               <span>Shipping</span>
-              <span className="fw-semibold text-reset">{shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}</span>
+              <span className="fw-semibold text-reset">{shipping === 0 ? 'Free' : `₹${shipping.toFixed(2)}`}</span>
             </div>
             
             <div className="d-flex justify-content-between mb-4 pt-3 border-top fw-bold fs-5" style={{ borderColor: 'var(--border-color)' }}>
               <span>Total</span>
-              <span style={{ color: 'var(--primary-color)' }}>${total.toFixed(2)}</span>
+              <span style={{ color: 'var(--primary-color)' }}>₹{total.toFixed(2)}</span>
             </div>
             
             <Link to="/checkout" className="btn btn-gradient w-100 py-3 fw-bold shadow">
@@ -111,7 +111,7 @@ const Cart = () => {
             
             {shipping > 0 && (
               <p className="text-center text-muted small mt-3 mb-0">
-                Add ${(100 - subtotal).toFixed(2)} more for free shipping!
+                Add ₹{(10000 - subtotal).toFixed(2)} more for free shipping!
               </p>
             )}
           </div>
